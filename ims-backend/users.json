@@ -1,0 +1,22 @@
+[
+  {
+    "email": "admin@gmail.com",
+    "password": "admin",
+    "role": "admin"
+  },
+  {
+    "email": "user@gmail.com",
+    "password": "passd",
+    "role": "viewer"
+  },
+  {
+    "email": "user1@gmail",
+    "password": "passd",
+    "role": "viewer"
+  },
+  {
+    "email": "nileshwale1@gmail.com",
+    "password": "1234",
+    "role": "viewer"
+  }
+]
