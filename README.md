@@ -65,11 +65,8 @@ The **Inventory Management System (IMS)** is a full-stack web application design
  
  
  npm install express cors body-parser jsonwebtoken
- Start the server:
- 
- 
- node index.js
- Server runs at: http://localhost:3000
+
+
  
  🔜 Frontend Setup
  Navigate to the frontend directory:
