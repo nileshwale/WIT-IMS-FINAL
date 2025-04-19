@@ -1,0 +1,57 @@
+<ion-header translucent="true">
+  <ion-toolbar class="login-toolbar">
+    <ion-title class="ion-text-center">Welcome to Inventory Management System</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="login-page">
+  <div class="login-container">
+    <div class="login-card">
+      <div class="login-header">
+        <img src="assets/images/login.jpg" alt="Logo" class="login-logo" />
+        <h2>Welcome Back</h2>
+        <p>Please enter your credentials to Login</p>
+      </div>
+
+      <!-- 🔐 Login Form -->
+      <form (submit)="login()">
+        <ion-item lines="none" class="custom-input">
+          <ion-icon name="mail-outline" slot="start"></ion-icon>
+          <ion-input
+            placeholder="Email"
+            type="email"
+            [(ngModel)]="email"
+            name="email"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <ion-item lines="none" class="custom-input">
+          <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+          <ion-input
+            placeholder="Password"
+            type="password"
+            [(ngModel)]="password"
+            name="password"
+            required
+          ></ion-input>
+        </ion-item>
+
+        <!-- ✅ Error Message -->
+        <ion-text color="danger" *ngIf="errorMessage">
+          <p class="error-text">{{ errorMessage }}</p>
+        </ion-text>
+
+        <ion-button expand="block" type="submit" class="login-btn">Login</ion-button>
+      </form>
+
+      <!-- 🔗 Link to Signup -->
+      <div class="signup-link">
+        <ion-text>
+          Don’t have an account?
+          <a routerLink="/signup">Create one</a>
+        </ion-text>
+      </div>
+    </div>
+  </div>
+</ion-content>

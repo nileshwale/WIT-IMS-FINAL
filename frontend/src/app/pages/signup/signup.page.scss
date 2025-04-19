@@ -1,0 +1,85 @@
+.header2 {
+  --background: #5dade2;
+  --ion-toolbar-background: #5dade2 !important;
+  color: #fff;
+  font-weight: bold;
+}
+
+.signup-background {
+  --background: linear-gradient(135deg, #d0f0fd, #e6f7ff);
+  display: block;
+  height: 100%;
+}
+
+.signup-wrapper {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: 100%;
+  width: 100%;
+  padding: 20px;
+}
+
+
+.signup-container {
+  background: rgba(255, 255, 255, 0.85);
+  backdrop-filter: blur(12px);
+  border-radius: 20px;
+  padding: 2rem;
+  max-width: 420px;
+  width: 100%;
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.15);
+}
+
+.signup-title {
+  text-align: center;
+  font-size: 2rem;
+  font-weight: bold;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+}
+
+.signup-subtitle {
+  text-align: center;
+  margin-bottom: 1.2rem;
+  color: #5d6d7e;
+  font-size: 0.95rem;
+}
+
+.custom-input {
+  margin-bottom: 15px;
+  background-color: #ffffff;
+  border-radius: 12px;
+  padding: 10px 12px;
+  border: 1px solid #b3cde0;
+  --color: #2c3e50;
+  --placeholder-color: #9ea7ad;
+}
+
+.message {
+  text-align: center;
+  font-size: 0.9rem;
+  color: #c0392b;
+  margin-bottom: 10px;
+}
+
+.signup-btn {
+  --background: linear-gradient(to right, #00c6ff, #0072ff);
+  --color: white;
+  border-radius: 25px;
+  font-weight: bold;
+  margin-top: 10px;
+  box-shadow: 0 4px 12px rgba(0, 114, 255, 0.3);
+}
+
+.login-link {
+  margin-top: 18px;
+  text-align: center;
+  font-size: 0.95rem;
+}
+
+.login-link a {
+  color: #0072ff;
+  text-decoration: underline;
+  font-weight: 500;
+}

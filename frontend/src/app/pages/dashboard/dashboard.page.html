@@ -1,0 +1,87 @@
+<ion-header>
+  <ion-toolbar class="custom-header">
+    <ion-title class="custom-title">📦 Inventory Manager</ion-title>
+    <ion-buttons slot="end">
+      <ion-button fill="clear" class="logout-icon" (click)="logout()">
+        <ion-icon name="log-out-outline"></ion-icon>
+      </ion-button>
+    </ion-buttons>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="dashboard-content">
+
+  <!-- 🔍 Search Bar -->
+  <ion-item class="search-bar" lines="none">
+    <ion-icon name="search-outline" slot="start"></ion-icon>
+    <ion-input
+      placeholder="Search items..."
+      [(ngModel)]="searchTerm"
+      (ionInput)="filterItems()"
+    ></ion-input>
+  </ion-item>
+
+  <!-- 📊 Action Buttons -->
+  <div class="top-buttons" *ngIf="role === 'admin'">
+    <ion-button shape="round" fill="solid" color="primary" (click)="openAddModal()">
+      <ion-icon name="add-circle-outline" slot="start"></ion-icon>
+      Add Item
+    </ion-button>
+    <ion-button shape="round" fill="outline" color="tertiary" (click)="downloadCSV()">
+      <ion-icon name="download-outline" slot="start"></ion-icon>
+      Export CSV
+    </ion-button>
+  </div>
+
+  <!-- 📦 Inventory Cards -->
+  <ion-grid class="inventory-grid">
+    <ion-row>
+      <ion-col size="12" size-md="6" size-lg="4" *ngFor="let item of filteredItems; let i = index">
+        <ion-card class="inventory-card">
+          <ion-card-header>
+            <ion-card-title>{{ item.ItemName }}</ion-card-title>
+            <ion-card-subtitle>{{ item.Category }}</ion-card-subtitle>
+          </ion-card-header>
+
+          <ion-card-content>
+            <div class="image-container" *ngIf="item.Image">
+              <img [src]="item.Image" alt="Item Image" />
+            </div>
+            <div class="item-details">
+              <p>
+                🔢 <strong>Quantity:</strong>
+                <span [ngClass]="{ 'low-stock': item.Quantity < lowStockThreshold }">
+                  {{ item.Quantity }}
+                  <ion-icon *ngIf="item.Quantity < lowStockThreshold" name="alert-circle-outline" color="danger"></ion-icon>
+                </span>
+              </p>
+              
+              <p><ion-icon name="pricetag-outline"></ion-icon> Price: ₹{{ item.Price }}</p>
+              <p><ion-icon name="business-outline"></ion-icon> Supplier: {{ item.Supplier }}</p>
+              <p><ion-icon name="calendar-outline"></ion-icon> Restock: {{ item.RestockDate | date: 'mediumDate' }}</p>
+            </div>
+
+            <!-- Admin Controls -->
+            <div class="card-controls" *ngIf="role === 'admin'">
+              <ion-button fill="clear" size="small" color="warning" (click)="openEditModal(item, i)">
+                <ion-icon name="create-outline"></ion-icon>
+              </ion-button>
+              <ion-button fill="clear" size="small" color="danger" (click)="confirmDelete(i)">
+                <ion-icon name="trash-outline"></ion-icon>
+              </ion-button>
+            </div>
+          </ion-card-content>
+        </ion-card>
+      </ion-col>
+    </ion-row>
+  </ion-grid>
+
+  <!-- 🚫 Empty State -->
+  <ng-template #emptyList>
+    <div class="empty-message">
+      <ion-icon name="alert-circle-outline" color="medium"></ion-icon>
+      <p>No inventory items found.</p>
+    </div>
+  </ng-template>
+
+</ion-content>

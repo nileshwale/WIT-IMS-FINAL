@@ -1,0 +1,51 @@
+<ion-header class="header2" translucent="true">
+  <ion-toolbar class="transparent-header">
+    <ion-title class="ion-text-center">Sign Up</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content class="signup-background ion-no-padding">
+
+  <!-- Centering Wrapper -->
+  <div class="signup-wrapper">
+
+    <div class="signup-container">
+
+      <h2 class="signup-title">Welcome!</h2>
+      <p class="signup-subtitle">Create your account below</p>
+
+      <ion-text color="success" *ngIf="successMessage">
+        <p class="message">{{ successMessage }}</p>
+      </ion-text>
+
+      <ion-text color="danger" *ngIf="errorMessage">
+        <p class="message">{{ errorMessage }}</p>
+      </ion-text>
+
+      <!-- 📧 Email -->
+      <ion-item lines="none" class="custom-input">
+        <ion-icon name="mail-outline" slot="start"></ion-icon>
+        <ion-input placeholder="Email" [(ngModel)]="email" type="email"></ion-input>
+      </ion-item>
+
+      <!-- 🔒 Password -->
+      <ion-item lines="none" class="custom-input">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input placeholder="Password" [(ngModel)]="password" type="password"></ion-input>
+      </ion-item>
+
+      <!-- 🔒 Confirm Password -->
+      <ion-item lines="none" class="custom-input">
+        <ion-icon name="lock-closed-outline" slot="start"></ion-icon>
+        <ion-input placeholder="Confirm Password" [(ngModel)]="confirmPassword" type="password"></ion-input>
+      </ion-item>
+
+      <!-- 🔘 Sign Up Button -->
+      <ion-button expand="block" class="signup-btn" (click)="signup()">
+        Sign Up
+      </ion-button>
+
+    </div>
+
+  </div>
+</ion-content>
