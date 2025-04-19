@@ -1,5 +1,7 @@
 ## Inventory Management System
 
+video link - https://drive.google.com/file/d/1syYsqOHh2MNVmQ4ZlKngkr9C8FRmTJTB/view?usp=sharing
+
 The **Inventory Management System (IMS)** is a full-stack web application designed to help efficiently manage inventory items with an intuitive and responsive UI. Built using **Ionic + Angular** on the frontend and **Node.js + Express** on the backend, it offers powerful features like user authentication, role-based access control, image uploads, CSV export, and more.
  
  ---
